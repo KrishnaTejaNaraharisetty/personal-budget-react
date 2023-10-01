@@ -1,10 +1,18 @@
 
 import React from 'react';
-
+import Chart from '../Chart/MyChart';
 
 function HomePage() {
   return (
-    <main class="center" id="main">
+
+    
+
+    <main className="center" id="main">
+
+    <script src="app.js">
+    </script>
+    <link rel="stylesheet" href="app.scss"></link>
+    
 
         <div class="page-area">
 
@@ -45,9 +53,13 @@ function HomePage() {
             <article>
                 <h1>Chart</h1>
                 <p>
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <canvas id="myChart" width="300" height="300"></canvas>
                 </p>
             </article>
+
+            <div>
+                <svg className="myDoughnutChart" width="300" height="300"></svg>
+            </div>
 
         </div>
 
