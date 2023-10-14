@@ -1,44 +1,24 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 4200;
-const cors = require('cors');
+const fileSystem = require('fs');
+const importJSON = fileSystem.readFileSync('data.json','utf8');
+const budgetData = JSON.parse(importJSON);
 
 app.use(cors());
-
 app.use('/', express.static('public'));
 
-/*
-const budget = {
-    myBudget: [
-    {
-        title: 'Eat Out',
-        budget: 30
-    },
+const budget = [];
 
-    {
-        title: 'Rent',
-        budget: 350
-    },
-
-    {
-        title: 'Groceries',
-        budget: 90
-    },
-    ]
-}; 
-*/
-
-app.get('/hello', (req, res) => {
+app.get('/hello', (req,res) => {
     res.send('Hello World!');
 });
 
-app.get('/budget', (req, res) => {
-    const samp=require('./data.json')
-    res.json(samp);
+app.get('/budget', (req,res) => {
+    res.json(budgetData);
 });
 
-
-
-app.listen(port, ()=> {
-    console.log(`Example app listening at http://localhost:${port}`);
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
 });

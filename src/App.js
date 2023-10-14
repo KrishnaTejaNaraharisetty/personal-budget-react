@@ -19,7 +19,6 @@ import LoginPage from './LoginPage/LoginPage';
 import Chart from './Chart/MyChart';
 import MyChart from './Chart/MyChart';
 
-
 function App() {
   return (
     <Router>
